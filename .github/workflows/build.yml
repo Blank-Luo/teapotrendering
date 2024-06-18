@@ -91,6 +91,6 @@ jobs:
       with:
         name: debian-packages
         path: |
-          *.deb
-          *.changes
-          *.build
+          /*.deb
+          /*.changes
+          /*.build
