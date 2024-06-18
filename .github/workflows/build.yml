@@ -77,7 +77,7 @@ jobs:
 
     - name: Build Debian package
       run: |
-        debuild -us -uc -b
+        dpkg-buildpackage -b -us -uc
 
     - name: Archive build artifacts
       uses: actions/upload-artifact@v2
