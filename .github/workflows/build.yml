@@ -40,44 +40,37 @@ jobs:
         mkdir -p debian
         echo "9" > debian/compat
         cat << EOF > debian/control
-        Source: teapotrending
-        Section: misc
+        Source: teapotrendering
+        Section: utils
         Priority: optional
-        Maintainer: Your Name <your.email@example.com>
-        Build-Depends: debhelper (>= 9), qtbase5-dev, libgl1-mesa-dev, libglu1-mesa-dev, freeglut3-dev
+        Maintainer: Blank-Luo <blankluo@foxmail.com>
+        Build-Depends: debhelper (>= 9), pkg-config, dpkg-dev, qt5-qmake, qtbase5-dev, qttools5-dev-tools
         Standards-Version: 3.9.6
-        Homepage: http://example.com
-
-        Package: teapotrending
+        Homepage: teapotrendering
+        
+        Package: teapotrendering
         Architecture: any
-        Depends: \${shlibs:Depends}, \${misc:Depends}
-        Description: A Qt application for rendering a teapot using OpenGL
-         A simple Qt application that uses OpenGL to render a teapot.
+        Depends: ${shlibs:Depends}, ${misc:Depends}
+        Recommends: libqt5libqgtk2, kimageformat-plugins
+        Description: A Qt application for rendering a teapot using OpenGL A simple Qt application that uses OpenGL to render a teapot.
         EOF
 
         cat << EOF > debian/changelog
-        teapotrending (1.0-1) unstable; urgency=low
+        teapotrending (1.0.1) unstable; urgency=low
 
           * Initial release.
 
-         -- Your Name <your.email@example.com>  $(date -R)
+         -- Blank-Luo <blankluo@foxmail.com>  $(date -R)
         EOF
 
         cat << EOF > debian/rules
         #!/usr/bin/make -f
-
-        %:
-        	dh \$@
-
+        include /usr/share/dpkg/default.mk
+        export QT_SELECT = qt5
+        %: 
+        	dh $@ --parallel
         override_dh_auto_configure:
-        	cd src && qmake
-
-        override_dh_auto_build:
-        	cd src && make -j1
-
-        override_dh_auto_install:
-        	install -d \$(DESTDIR)/usr/bin
-        	install -m 755 src/TeapotRendering \$(DESTDIR)/usr/bin/TeapotRendering
+        	dh_auto_configure -- DEFINES+="VERSION=$(DEB_VERSION_UPSTREAM)"
         EOF
 
         chmod +x debian/rules
