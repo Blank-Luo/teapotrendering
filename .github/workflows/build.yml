@@ -91,6 +91,6 @@ jobs:
       with:
         name: debian-packages
         path: |
-          teapotrendering/*.deb
-          teapotrendering/*.changes
-          teapotrendering/*.build
+          ${{ github.workspace }}/../*.deb
+          ${{ github.workspace }}/../*.changes
+          ${{ github.workspace }}/../*.build
