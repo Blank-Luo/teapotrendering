@@ -19,7 +19,7 @@ jobs:
     - name: Set up Qt
       uses: jurplel/install-qt-action@v2
       with:
-        version: '5.15.2' # 选择你需要的Qt版本
+        version: '5.15.2'
         host: 'linux'
         target: 'desktop'
         arch: 'gcc_64'
@@ -91,6 +91,6 @@ jobs:
       with:
         name: debian-packages
         path: |
-          ${{ github.workspace }}/../*.deb
-          ${{ github.workspace }}/../*.changes
-          ${{ github.workspace }}/../*.build
+          ${{ github.workspace }}/*.deb
+          ${{ github.workspace }}/*.changes
+          ${{ github.workspace }}/*.buildinfo
