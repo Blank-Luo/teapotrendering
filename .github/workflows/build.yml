@@ -30,7 +30,7 @@ jobs:
     
     - name: Build the project
       run: |
-        cd $GITHUB_WORKSPACE
+        cd ../$GITHUB_WORKSPACE
         /home/runner/Qt/5.15.2/gcc_64/bin/qmake
         make
 
