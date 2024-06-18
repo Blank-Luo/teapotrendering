@@ -65,19 +65,15 @@ jobs:
 
         cat << EOF > debian/rules
         #!/usr/bin/make -f
-
-        %:
-        	dh \$@
-
+        include /usr/share/dpkg/default.mk
+        
+        export QT_SELECT = qt5
+        
+        %: 
+        	dh $@ --parallel
+         
         override_dh_auto_configure:
-        	cd src && qmake
-
-        override_dh_auto_build:
-        	cd src && make -j1
-
-        override_dh_auto_install:
-        	install -d \$(DESTDIR)/usr/bin
-        	install -m 755 src/TeapotRendering \$(DESTDIR)/usr/bin/TeapotRendering
+        	dh_auto_configure -- DEFINES+="VERSION=$(DEB_VERSION_UPSTREAM)"
         EOF
 
         chmod +x debian/rules
