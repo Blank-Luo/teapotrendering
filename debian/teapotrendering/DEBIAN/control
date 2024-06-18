@@ -1,0 +1,10 @@
+Package: teapotrendering
+Version: 1.0.1
+Architecture: amd64
+Maintainer: BlankLuo <blankluo@foxmail.com>
+Installed-Size: 7
+Recommends: libqt5libqgtk2, kimageformat-plugins
+Section: utils
+Priority: optional
+Homepage: teapotrendering
+Description: A Qt application for rendering a teapot using OpenGL A simple Qt application that uses OpenGL to render a teapot.

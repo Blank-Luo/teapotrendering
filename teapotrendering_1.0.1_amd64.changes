@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Tue, 18 Jun 2024 23:42:36 +0800
+Source: teapotrendering
+Binary: teapotrendering
+Built-For-Profiles: noudeb
+Architecture: amd64
+Version: 1.0.1
+Distribution: unstable
+Urgency: low
+Maintainer: BlankLuo <blankluo@foxmail.com>
+Changed-By: BlankLuo <blankluo@foxmail.com>
+Description:
+ teapotrendering - A Qt application for rendering a teapot using OpenGL A simple Qt
+Changes:
+ teapotrendering (1.0.1) unstable; urgency=low
+ .
+   * Initial release.
+Checksums-Sha1:
+ 4cea6e601177820af189eb1738f33bbd8d24161a 12274 teapotrendering_1.0.1_amd64.buildinfo
+ 6a11a6cffe2c51ccfc468e9d80b3892e36049e83 932 teapotrendering_1.0.1_amd64.deb
+Checksums-Sha256:
+ a44dcb0120ae3414dda11d29e7a5a71bf7026f3d5e67de097c2feb376ee6eda8 12274 teapotrendering_1.0.1_amd64.buildinfo
+ ebd4651a5776f7cbf933256c41ff037e044cbd32082e4b2a7af94a3f208c0761 932 teapotrendering_1.0.1_amd64.deb
+Files:
+ d59f71e87b3667e596b31f085c058f3a 12274 utils optional teapotrendering_1.0.1_amd64.buildinfo
+ 9b9de42ebd7ba209973662734629cc61 932 utils optional teapotrendering_1.0.1_amd64.deb

@@ -1,0 +1,14 @@
+Source: teapotrendering
+Section: utils
+Priority: optional
+Maintainer: BlankLuo <blankluo@foxmail.com>
+Build-Depends: debhelper (>= 9), pkg-config, dpkg-dev, qt5-qmake, qtbase5-dev, qttools5-dev-tools
+Standards-Version: 1.0.1
+Homepage: teapotrendering
+
+Package: teapotrendering
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: libqt5libqgtk2, kimageformat-plugins
+Description: A Qt application for rendering a teapot using OpenGL A simple Qt application that uses OpenGL to render a teapot.
+
