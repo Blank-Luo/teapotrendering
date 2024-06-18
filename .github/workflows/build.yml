@@ -20,7 +20,7 @@ jobs:
       uses: jurplel/install-qt-action@v2
       with:
         version: '5.15.2' # 选择你需要的Qt版本
-        host: 'ubuntu-20.04'
+        host: 'linux'
         target: 'desktop'
         arch: 'gcc_64'
 
