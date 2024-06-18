@@ -56,7 +56,7 @@ jobs:
         EOF
 
         cat << EOF > debian/changelog
-        teapotrending (1.0.1) unstable; urgency=low
+        teapotrendering (1.0.1) unstable; urgency=low
 
           * Initial release.
 
